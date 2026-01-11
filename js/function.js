@@ -76,16 +76,14 @@ function startEverything() {
 }
 
 $(document).ready(function() {
-    // $("#klik").on('click touchstart', function() {
-    //     $("#klik").fadeOut(1000, function() {
-    //         $(this).remove();
-    //     });
-    //     setTimeout(function() {
-    //         startEverything();
-    //     }, 1000);
-    // });
-	document.getElementById("klik").addEventListener("click", startEverything);
-	document.getElementById("klik").addEventListener("touchstart", startEverything);
+    $("#klik").on('click touchstart', function() {
+        $("#klik").fadeOut(1000, function() {
+            $(this).remove();
+        });
+        setTimeout(function() {
+            startEverything();
+        }, 1000);
+    });
 
 });
 
@@ -163,4 +161,5 @@ function showMessages() {
         $('#loveu').css("opacity", 1);
     }, 3000);
 }
+
 
