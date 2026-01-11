@@ -23,7 +23,7 @@ var canvas = document.getElementById( 'canvas' ),
 		limiterTotal = 10,
 		limiterTick = 0,
 		// this will time the auto launches of fireworks, one launch per 80 loop ticks
-		timerTotal = 600,
+		timerTotal = 1500,
 		timerTick = 0,
 		mousedown = false,
 		// mouse x coordinate,
@@ -141,11 +141,11 @@ function Particle( x, y ) {
 	}
 	// set a random angle in all possible directions, in radians
 	this.angle = random( 0, Math.PI * 2 );
-	this.speed = random( 1, 3 );
+	this.speed = random( 1, 8 );
 	// friction will slow the particle down
 	this.friction = 0.95;
 	// gravity will be applied and pull the particle down
-	this.gravity = 0.3;
+	this.gravity = 0.4;
 	// set the hue to a random number +-20 of the overall hue variable
 	this.hue = random( hue - 20, hue + 20 );
 	this.brightness = random( 50, 80 );
@@ -266,6 +266,7 @@ window.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
 
 
 
