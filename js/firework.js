@@ -250,9 +250,13 @@ function loop() {
 
 // mouse event bindings
 // update the mouse coordinates on mousemove
-window.addEventListener( 'mousemove', function( e ) {
-	mx = e.pageX - canvas.offsetLeft;
-	my = e.pageY - canvas.offsetTop;
+window.addEventListener("mousemove", function(e) {
+    const rect = canvas.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    createFirework(x, y);
 });
 
 // toggle mousedown state and prevent canvas from being selected
