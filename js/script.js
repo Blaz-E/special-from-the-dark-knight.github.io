@@ -31,6 +31,15 @@ var canvas = document.getElementById( 'canvas' ),
 		// mouse y coordinate
 		my;
 
+function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+
 // set canvas dimensions
 canvas.width = cw;
 canvas.height = ch;
@@ -265,3 +274,4 @@ window.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
