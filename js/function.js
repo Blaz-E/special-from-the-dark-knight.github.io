@@ -7,14 +7,23 @@ $(function () {
     var $loveHeart = $("#loveHeart");
     $garden = $("#garden");
     gardenCanvas = $garden[0];
-    gardenCanvas.width = $loveHeart.width();
+
+    gardenCanvas.width  = $loveHeart.width();
     gardenCanvas.height = $loveHeart.height();
-	offsetX = gardenCanvas.width / 2;
+
+    offsetX = gardenCanvas.width / 2;
     offsetY = gardenCanvas.height / 2 - 55;
+
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
 
+    $(window).on("resize", function () {
+        gardenCanvas.width  = $loveHeart.width();
+        gardenCanvas.height = $loveHeart.height();
+        offsetX = gardenCanvas.width / 2;
+        offsetY = gardenCanvas.height / 2 - 55;
+    });
 
     setInterval(function () {
         garden.render();
@@ -22,6 +31,7 @@ $(function () {
 
     adjustContentPosition();
 });
+
 
 function startEverything() {
 	$.fn.typewriter = function() {
@@ -161,3 +171,4 @@ function showMessages() {
     }, 3000);
 
 }
+
