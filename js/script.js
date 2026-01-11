@@ -72,7 +72,7 @@ function Firework( sx, sy, tx, ty ) {
 		this.coordinates.push( [ this.x, this.y ] );
 	}
 	this.angle = Math.atan2( ty - sy, tx - sx );
-	this.speed = 1;
+	this.speed = 0.4;
 	this.acceleration = 1.05;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
@@ -266,6 +266,7 @@ window.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
 
 
 
