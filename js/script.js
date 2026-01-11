@@ -141,11 +141,11 @@ function Particle( x, y ) {
 	}
 	// set a random angle in all possible directions, in radians
 	this.angle = random( 0, Math.PI * 2 );
-	this.speed = random( 1, 5 );
+	this.speed = random( 1, 3 );
 	// friction will slow the particle down
 	this.friction = 0.95;
 	// gravity will be applied and pull the particle down
-	this.gravity = 0.4;
+	this.gravity = 10;
 	// set the hue to a random number +-20 of the overall hue variable
 	this.hue = random( hue - 20, hue + 20 );
 	this.brightness = random( 50, 80 );
@@ -266,5 +266,6 @@ window.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+
 
 
