@@ -7,10 +7,10 @@ $(function () {
     var $loveHeart = $("#loveHeart");
     $garden = $("#garden");
     gardenCanvas = $garden[0];
-	offsetX = gardenCanvas.width / 2;
-    offsetY = gardenCanvas.height / 2 - 55;
     gardenCanvas.width = $loveHeart.width();
     gardenCanvas.height = $loveHeart.height();
+	offsetX = gardenCanvas.width / 2;
+    offsetY = gardenCanvas.height / 2 - 55;
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
@@ -159,4 +159,5 @@ function showMessages() {
     setTimeout(function() {
         $('#loveu').css("opacity", 1);
     }, 3000);
+
 }
