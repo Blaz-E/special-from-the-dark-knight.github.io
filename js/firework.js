@@ -261,7 +261,14 @@ window.addEventListener("mousemove", function(e) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    createFirework(x, y);
+    fireworks.push(
+	    new Firework(
+	        cw / 2,
+	        ch,
+	        random(0, cw),
+	        random(0, ch / 2)
+	    )
+	);
 });
 
 
